@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 
+import java.sql.SQLOutput;
+
 
 public class FahrenheitPane extends GridPane {
     private Label result;
@@ -47,5 +49,6 @@ public class FahrenheitPane extends GridPane {
         double celsiusTemp = (fahrenheitTemp - 32) * 5.0/9;
         result.setText(Math.round(celsiusTemp) + "");
     }
+
 
 }
