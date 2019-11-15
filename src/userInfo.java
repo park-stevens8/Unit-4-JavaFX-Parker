@@ -1,22 +1,19 @@
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.awt.*;
 
 public class userInfo extends Application {
-    private Label result;
-    private TextField name;
-    private TextField age;
-    private TextField color;
-    private TextField hobby;
-
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage stage) {
+        Scene scene = new Scene(new userInfoPane(), 400, 200);
+        stage.setTitle("User Info");
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void main(String[]args) {
+        launch(args);
     }
 }
