@@ -1,17 +1,19 @@
-public class BankAccountClient{
-  public static void main(String[] args){
-  BankAccount myAccount = new BankAccount("AccountName", 10000, 0, 0);
-  System.out.println(myAccount);
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-  myAccount.deposit(1000);
-  System.out.println("You now have $" + myAccount.getBalance() + " in your account");
+import static javafx.application.Application.launch;
 
-  myAccount.withdrawal(100);
-  System.out.println("You now have $" + myAccount.getBalance() + " in your account");
+public class BankAccountClient extends Application {
+  public void start(Stage stage) {
+    Scene scene = new Scene(new BankAccountGUI(), 1000, 500);
 
-  System.out.println("You have " + myAccount.getTransactions() + " transactions");
+    stage.setTitle("Bank Account GUI");
+    stage.setScene(scene);
+    stage.show();
+  }
 
-  myAccount.addInterest(.0006);
-  System.out.println("Added .06% interest to your balance making the total: $" + myAccount.getBalance());
+  public static void main(String[]args) {
+    launch(args);
   }
 }
